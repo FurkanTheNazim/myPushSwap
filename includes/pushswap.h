@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pushswap.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/25 19:46:52 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/10/25 19:47:08 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "../libft/libft.h"
 # include "definitions.h"
 
 typedef struct s_element

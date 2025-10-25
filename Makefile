@@ -1,6 +1,9 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I includes
+CFLAGS = -Wall -Wextra -Werror -I includes -I libft
+
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = srcs/core/main.c \
        srcs/core/initializer.c \
@@ -26,18 +29,23 @@ OBJS = $(SRCS:.c=.o)
 
 HEADERS = includes/pushswap.h includes/definitions.h
 
-all: $(NAME)
+all: $(LIBFT) $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
 fclean: clean
+	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
