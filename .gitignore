@@ -1,0 +1,35 @@
+# Compiled files
+*.o
+*.a
+*.out
+
+# Executables
+push_swap
+checker
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Test files
+test_*
+a.out
+
+# Documentation and subject files (not for commit)
+notes/
+norm.md
+subject.md
+README.md
