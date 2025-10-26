@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 19:46:52 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/10/25 19:47:08 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/10/26 17:06:28 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void		normalize_values(int *values, int count, t_context *ctx);
 
 t_context	*initialize_context(int *values, int count);
 void		cleanup_context(t_context *ctx);
-t_strategy	select_strategy(int count);
 
 void		sort_tiny(t_context *ctx);
 void		sort_small(t_context *ctx);

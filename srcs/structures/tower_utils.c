@@ -22,7 +22,7 @@ t_element	*remove_element_top(t_tower *tower)
 	return (el);
 }
 
-void	destroy_context(t_context *ctx)
+void	cleanup_context(t_context *ctx)
 {
 	if (!ctx)
 		return;
