@@ -42,6 +42,12 @@ void	normalize_values(int *values, int count, t_context *ctx)
 		i[j] = idx;
 		j++;
 	}
+	j = 0;
+	while (j < count)
+	{
+		values[j] = i[j];
+		j++;
+	}
 	ctx->sorted_values = k;
 	ctx->total_count = count;
 	free(i);
