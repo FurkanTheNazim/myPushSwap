@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 19:46:52 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/10/26 17:06:28 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/10/26 17:09:49 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_context
 {
 	t_tower	*tower_a;
 	t_tower	*tower_b;
+	int		*sorted_values;
 	int		total_count;
 }	t_context;
 

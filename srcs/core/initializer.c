@@ -1,14 +1,5 @@
 #include "pushswap.h"
 
-static t_strategy	select_strategy(int count)
-{
-	if (count <= 3)
-		return (STRAT_TINY);
-	if (count <= 5)
-		return (STRAT_SMALL);
-	return (STRAT_RADIX);
-}
-
 t_context	*initialize_context(int *values, int count)
 {
 	t_context *ctx;
