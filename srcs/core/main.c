@@ -9,6 +9,8 @@ static void	execute_sort(t_context *ctx)
 		sort_tiny(ctx);
 	else if (strat == STRAT_SMALL)
 		sort_small(ctx);
+	else if (strat == STRAT_RADIX)
+		sort_radix(ctx);
 }
 
 int	main(int argc, char **argv)

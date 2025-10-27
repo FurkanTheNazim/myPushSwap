@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 19:46:52 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/10/26 17:09:49 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:45:00 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ t_strategy	select_strategy(int count);
 void		sort_tiny(t_context *ctx);
 void		sort_small(t_context *ctx);
 void		sort_radix(t_context *ctx);
+
+int			get_max_bits(int max_num);
 
 void		handle_error(void);
 void		free_split(char **split);

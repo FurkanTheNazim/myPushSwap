@@ -19,7 +19,9 @@ SRCS = srcs/core/main.c \
        srcs/actions/action_reverse.c \
        srcs/algorithms/sort_tiny.c \
        srcs/algorithms/sort_small.c \
-       srcs/utils/error_handler.c
+       srcs/algorithms/sort_radix.c \
+       srcs/utils/error_handler.c \
+       srcs/utils/bitwise_ops.c
 
 OBJS = $(SRCS:.c=.o)
 
