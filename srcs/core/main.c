@@ -1,5 +1,16 @@
 #include "pushswap.h"
 
+static void	execute_sort(t_context *ctx)
+{
+	t_strategy	strat;
+
+	strat = select_strategy(ctx->total_count);
+	if (strat == STRAT_TINY)
+		sort_tiny(ctx);
+	else if (strat == STRAT_SMALL)
+		sort_small(ctx);
+}
+
 int	main(int argc, char **argv)
 {
 	int	*values;
@@ -19,6 +30,7 @@ int	main(int argc, char **argv)
 		handle_error();
 	}
 	ctx = initialize_context(values, count);
+	execute_sort(ctx);
 	cleanup_context(ctx);
 	free(values);
 	return (0);

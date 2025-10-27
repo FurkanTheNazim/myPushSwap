@@ -66,6 +66,7 @@ void		normalize_values(int *values, int count, t_context *ctx);
 
 t_context	*initialize_context(int *values, int count);
 void		cleanup_context(t_context *ctx);
+t_strategy	select_strategy(int count);
 
 void		sort_tiny(t_context *ctx);
 void		sort_small(t_context *ctx);
