@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 19:46:52 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/10/27 21:45:00 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/10/28 00:22:57 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ typedef struct s_context
 	t_tower	*tower_b;
 	int		*sorted_values;
 	int		total_count;
-}	t_context;
+}		t_context;
 
-void	execute_swap_a(t_context *ctx);
-void	execute_swap_b(t_context *ctx);
-void	execute_swap_both(t_context *ctx);
-void	execute_push_a(t_context *ctx);
-void	execute_push_b(t_context *ctx);
-void	execute_rotate_a(t_context *ctx);
-void	execute_rotate_b(t_context *ctx);
-void	execute_rotate_both(t_context *ctx);
-void	execute_reverse_rotate_a(t_context *ctx);
-void	execute_reverse_rotate_b(t_context *ctx);
-void	execute_reverse_rotate_both(t_context *ctx);
+void		execute_swap_a(t_context *ctx);
+void		execute_swap_b(t_context *ctx);
+void		execute_swap_both(t_context *ctx);
+void		execute_push_a(t_context *ctx);
+void		execute_push_b(t_context *ctx);
+void		execute_rotate_a(t_context *ctx);
+void		execute_rotate_b(t_context *ctx);
+void		execute_rotate_both(t_context *ctx);
+void		execute_reverse_rotate_a(t_context *ctx);
+void		execute_reverse_rotate_b(t_context *ctx);
+void		execute_reverse_rotate_both(t_context *ctx);
 
 t_tower		*create_tower(char name);
 void		destroy_tower(t_tower *tower);
