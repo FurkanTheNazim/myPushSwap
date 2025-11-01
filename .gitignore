@@ -33,3 +33,6 @@ notes/
 norm.md
 subject.md
 README.md
+
+# Reference code (NEVER COMMIT!)
+push_swap/
