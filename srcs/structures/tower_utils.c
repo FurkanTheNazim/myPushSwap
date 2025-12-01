@@ -1,5 +1,6 @@
 #include "pushswap.h"
 
+// Yiginin en ustune eleman ekle (Push islemi)
 void	add_element_top(t_tower *tower, t_element *elem)
 {
 	if (!tower || !elem)
@@ -9,6 +10,7 @@ void	add_element_top(t_tower *tower, t_element *elem)
 	tower->size += 1;
 }
 
+// Yiginin en ustundeki elemani cikar (Pop islemi)
 t_element	*remove_element_top(t_tower *tower)
 {
 	t_element *el;
@@ -22,6 +24,7 @@ t_element	*remove_element_top(t_tower *tower)
 	return (el);
 }
 
+// Program baglamini temizle ve bellegi serbest birak
 void	cleanup_context(t_context *ctx)
 {
 	if (!ctx)

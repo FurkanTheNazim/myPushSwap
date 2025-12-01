@@ -1,5 +1,6 @@
 #include "pushswap.h"
 
+// String'in gecerli bir sayi olup olmadigini kontrol et
 static int	is_number(const char *s)
 {
 	if (!s || !*s)
@@ -17,17 +18,41 @@ static int	is_number(const char *s)
 	return (1);
 }
 
+static long	ft_atol(const char *str)
+{
+	long	res;
+	int		sign;
+
+	res = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - '0');
+		str++;
+	}
+	return (res * sign);
+}
+
+// Sayilarin integer sinirlarinda olup olmadigini kontrol et
 int	validate_integers(char **argv, int count)
 {
-	int i;
-	long val;
+	int		i;
+	long	val;
 
 	i = 0;
 	while (i < count)
 	{
 		if (!is_number(argv[i]))
 			return (0);
-		val = ft_atoi(argv[i]);
+		val = ft_atol(argv[i]);
 		if (val > INT_MAX || val < INT_MIN)
 			return (0);
 		i++;
@@ -35,6 +60,7 @@ int	validate_integers(char **argv, int count)
 	return (1);
 }
 
+// Tekrar eden sayi olup olmadigini kontrol et
 int	check_duplicates(int *values, int count)
 {
 	int i;

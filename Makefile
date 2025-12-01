@@ -21,7 +21,8 @@ SRCS = srcs/core/main.c \
        srcs/algorithms/sort_small.c \
        srcs/algorithms/sort_radix.c \
        srcs/utils/error_handler.c \
-       srcs/utils/bitwise_ops.c
+       srcs/utils/bitwise_ops.c \
+       srcs/utils/check_sorted.c
 
 OBJS = $(SRCS:.c=.o)
 

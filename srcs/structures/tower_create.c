@@ -1,5 +1,6 @@
 #include "pushswap.h"
 
+// Yeni bir yigin (tower) olustur
 t_tower	*create_tower(char name)
 {
 	t_tower *tower;
@@ -13,6 +14,7 @@ t_tower	*create_tower(char name)
 	return (tower);
 }
 
+// Yigini ve icindeki tum elemanlari temizle
 void	destroy_tower(t_tower *tower)
 {
 	t_element *tmp;
@@ -30,6 +32,7 @@ void	destroy_tower(t_tower *tower)
 	free(tower);
 }
 
+// Yeni bir eleman olustur
 t_element	*create_element(int value, int index)
 {
 	t_element *el;

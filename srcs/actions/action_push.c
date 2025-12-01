@@ -1,5 +1,6 @@
 #include "pushswap.h"
 
+// pa: B yiginindaki ilk elemani A yiginina tasi
 void	execute_push_a(t_context *ctx)
 {
 	t_element	*elem;
@@ -11,6 +12,7 @@ void	execute_push_a(t_context *ctx)
 	write(1, "pa\n", 3);
 }
 
+// pb: A yiginindaki ilk elemani B yiginina tasi
 void	execute_push_b(t_context *ctx)
 {
 	t_element	*elem;
