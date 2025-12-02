@@ -67,12 +67,9 @@ void	sort_small(t_context *ctx)
 {
 	if (!ctx || !ctx->tower_a)
 		return ;
-	// A'da 3 eleman kalana kadar en kucukleri B'ye at
 	while (ctx->tower_a->size > 3)
 		push_min_to_b(ctx);
-	// Kalan 3 elemani sirala
 	sort_tiny(ctx);
-	// B'deki elemani geri A'ya al (zaten sirali gelecekler)
 	while (ctx->tower_b->size > 0)
 		execute_push_a(ctx);
 }

@@ -1,64 +1,66 @@
 #include "pushswap.h"
 
-// qsort icin karsilastirma fonksiyonu
-static int	cmp_int(const void *a, const void *b)
+static void	sort_int_array(int *tab, int size)
 {
-	int ia = *(const int *)a;
-	int ib = *(const int *)b;
-	if (ia < ib)
-		return (-1);
-	if (ia > ib)
-		return (1);
-	return (0);
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - 1 - i)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				temp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
-// Degerleri normalize eden fonksiyon (0'dan N-1'e kadar siralar)
-// Bu islem, algoritmanin sayilarin buyuklugunden bagimsiz calismasini saglar
 void	normalize_values(int *values, int count, t_context *ctx)
 {
-	int	*i;
+	int	*temp;
+	int	*indices;
+	int	i;
 	int	j;
-	int	*k;
 
-	// Siralama icin gecici dizi
-	k = malloc(sizeof(int) * count);
-	if (!k)
+	temp = malloc(sizeof(int) * count);
+	if (!temp)
 		handle_error();
-	// Indeksler icin dizi
-	i = malloc(sizeof(int) * count);
-	if (!i)
+	indices = malloc(sizeof(int) * count);
+	if (!indices)
 	{
-		free(k);
+		free(temp);
 		handle_error();
 	}
-	// Degerleri kopyala
-	j = 0;
-	while (j < count)
+	i = -1;
+	while (++i < count)
+		temp[i] = values[i];
+	sort_int_array(temp, count);
+	i = -1;
+	while (++i < count)
 	{
-		k[j] = values[j];
-		j++;
+		j = -1;
+		while (++j < count)
+		{
+			if (values[i] == temp[j])
+			{
+				indices[i] = j;
+				break ;
+			}
+		}
 	}
-	// Gecici diziyi sirala
-	qsort(k, count, sizeof(int), cmp_int);
-	// Her degerin siralanmis dizideki indeksini bul
-	j = 0;
-	while (j < count)
-	{
-		int idx = 0;
-		while (idx < count && k[idx] != values[j])
-			idx++;
-		i[j] = idx;
-		j++;
-	}
-	// Orijinal degerleri indekslerle degistir
-	j = 0;
-	while (j < count)
-	{
-		values[j] = i[j];
-		j++;
-	}
-	// Siralanmis diziyi context'e kaydet (referans icin)
-	ctx->sorted_values = k;
+	i = -1;
+	while (++i < count)
+		values[i] = indices[i];
+	ctx->sorted_values = temp;
 	ctx->total_count = count;
-	free(i);
+	free(indices);
 }
