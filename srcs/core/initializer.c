@@ -12,15 +12,11 @@
 
 #include "pushswap.h"
 
-t_context	*initialize_context(int *values, int count)
+static int	*allocate_sorted_values(int *values, int count, t_context *ctx)
 {
-	t_context	*ctx;
-	int			*sorted_values;
-	int			i;
+	int	*sorted_values;
+	int	i;
 
-	ctx = malloc(sizeof(t_context));
-	if (!ctx)
-		handle_error();
 	sorted_values = malloc(sizeof(int) * count);
 	if (!sorted_values)
 	{
@@ -30,15 +26,33 @@ t_context	*initialize_context(int *values, int count)
 	i = -1;
 	while (++i < count)
 		sorted_values[i] = values[i];
+	return (sorted_values);
+}
+
+static void	populate_tower(t_context *ctx, int *values, int *sorted, int count)
+{
+	int	i;
+
+	i = count;
+	while (--i >= 0)
+		add_element_top(ctx->tower_a, create_element(values[i], sorted[i]));
+}
+
+t_context	*initialize_context(int *values, int count)
+{
+	t_context	*ctx;
+	int			*sorted_values;
+
+	ctx = malloc(sizeof(t_context));
+	if (!ctx)
+		handle_error();
+	sorted_values = allocate_sorted_values(values, count, ctx);
 	ctx->sorted_values = sorted_values;
 	ctx->total_count = count;
 	normalize_values(values, count, ctx);
 	ctx->tower_a = create_tower('a');
 	ctx->tower_b = create_tower('b');
-	i = count;
-	while (--i >= 0)
-		add_element_top(ctx->tower_a,
-			create_element(values[i], sorted_values[i]));
+	populate_tower(ctx, values, sorted_values, count);
 	free(sorted_values);
 	return (ctx);
 }

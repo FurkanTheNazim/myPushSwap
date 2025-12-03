@@ -36,26 +36,27 @@ static void	sort_int_array(int *tab, int size)
 	}
 }
 
-void	normalize_values(int *values, int count, t_context *ctx)
+static int	*allocate_temp_arrays(int count, int **indices)
 {
 	int	*temp;
-	int	*indices;
-	int	i;
-	int	j;
 
 	temp = malloc(sizeof(int) * count);
 	if (!temp)
 		handle_error();
-	indices = malloc(sizeof(int) * count);
-	if (!indices)
+	*indices = malloc(sizeof(int) * count);
+	if (!*indices)
 	{
 		free(temp);
 		handle_error();
 	}
-	i = -1;
-	while (++i < count)
-		temp[i] = values[i];
-	sort_int_array(temp, count);
+	return (temp);
+}
+
+static void	map_indices(int *values, int *temp, int *indices, int count)
+{
+	int	i;
+	int	j;
+
 	i = -1;
 	while (++i < count)
 	{
@@ -69,6 +70,20 @@ void	normalize_values(int *values, int count, t_context *ctx)
 			}
 		}
 	}
+}
+
+void	normalize_values(int *values, int count, t_context *ctx)
+{
+	int	*temp;
+	int	*indices;
+	int	i;
+
+	temp = allocate_temp_arrays(count, &indices);
+	i = -1;
+	while (++i < count)
+		temp[i] = values[i];
+	sort_int_array(temp, count);
+	map_indices(values, temp, indices, count);
 	i = -1;
 	while (++i < count)
 		values[i] = indices[i];

@@ -12,7 +12,6 @@
 
 #include "pushswap.h"
 
-// Siralama islemini baslatan fonksiyon
 static void	execute_sort(t_context *ctx)
 {
 	t_strategy	strat;

@@ -12,8 +12,6 @@
 
 #include "pushswap.h"
 
-// Radix Sort algoritmasi (Taban siralamasi)
-// Sayilari bitlerine gore siralar (ikilik tabanda)
 static void	process_radix_bit(t_context *ctx, int bit_idx, int size)
 {
 	int	j;
