@@ -1,19 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_handler.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:18:23 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:19:01 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-// Hata mesajini yazdir ve programdan cik
 void	handle_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
-// ft_split ile ayrilmis diziyi serbest birak
 void	free_split(char **split)
 {
-	int i;
+	int	i;
 
 	if (!split)
-		return;
+		return ;
 	i = 0;
 	while (split[i])
 	{

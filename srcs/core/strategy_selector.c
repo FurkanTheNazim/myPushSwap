@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strategy_selector.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:24:01 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:24:18 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-// Eleman sayisina gore siralama stratejisini secen fonksiyon
 t_strategy	select_strategy(int count)
 {
 	if (count <= 3)
-		return (STRAT_TINY); // 3 veya daha az eleman
+		return (STRAT_TINY);
 	if (count <= 5)
-		return (STRAT_SMALL); // 5 veya daha az eleman
-	return (STRAT_RADIX); // Diger durumlar (buyuk veri setleri)
+		return (STRAT_SMALL);
+	return (STRAT_RADIX);
 }

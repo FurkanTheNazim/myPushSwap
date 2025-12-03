@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   action_push.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:25:55 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:26:05 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-// pa: B yiginindaki ilk elemani A yiginina tasi
 void	execute_push_a(t_context *ctx)
 {
 	t_element	*elem;
@@ -12,7 +23,6 @@ void	execute_push_a(t_context *ctx)
 	write(1, "pa\n", 3);
 }
 
-// pb: A yiginindaki ilk elemani B yiginina tasi
 void	execute_push_b(t_context *ctx)
 {
 	t_element	*elem;

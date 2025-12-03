@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_tiny.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:25:27 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:25:37 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-
-
-// 3 elemanli siralama (Hardcoded logic)
-// Tum olasiliklar (5 durum) icin en uygun islemleri yapar
 static void	sort_three(t_context *ctx)
 {
 	int	a;
@@ -33,7 +41,6 @@ static void	sort_three(t_context *ctx)
 		execute_reverse_rotate_a(ctx);
 }
 
-// Kucuk veri setleri (2 veya 3 eleman) icin siralama
 void	sort_tiny(t_context *ctx)
 {
 	if (!ctx || !ctx->tower_a)

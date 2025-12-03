@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:21:51 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:22:20 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-// String'in gecerli bir sayi olup olmadigini kontrol et
 static int	is_number(const char *s)
 {
 	if (!s || !*s)
@@ -45,7 +56,6 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-// Sayilarin integer sinirlarinda olup olmadigini kontrol et
 int	validate_integers(char **argv, int count)
 {
 	int		i;
@@ -64,11 +74,10 @@ int	validate_integers(char **argv, int count)
 	return (1);
 }
 
-// Tekrar eden sayi olup olmadigini kontrol et
 int	check_duplicates(int *values, int count)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < count)

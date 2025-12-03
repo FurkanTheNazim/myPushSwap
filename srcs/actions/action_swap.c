@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   action_swap.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 19:26:57 by mahmmous          #+#    #+#             */
+/*   Updated: 2025/12/03 19:26:57 by mahmmous         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-// Yiginindaki ilk iki elemani takas et
 static void	swap_stack(t_tower *tower)
 {
 	t_element	*first;
@@ -14,21 +25,18 @@ static void	swap_stack(t_tower *tower)
 	add_element_top(tower, second);
 }
 
-// sa: A yiginindaki ilk iki elemani takas et
 void	execute_swap_a(t_context *ctx)
 {
 	swap_stack(ctx->tower_a);
 	write(1, "sa\n", 3);
 }
 
-// sb: B yiginini ilk iki elemani takas et
 void	execute_swap_b(t_context *ctx)
 {
 	swap_stack(ctx->tower_b);
 	write(1, "sb\n", 3);
 }
 
-// ss: sa ve sb'yi ayni anda yap
 void	execute_swap_both(t_context *ctx)
 {
 	swap_stack(ctx->tower_a);
