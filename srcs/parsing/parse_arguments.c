@@ -14,6 +14,11 @@ static int	parse_single_arg(char *arg, int **values)
 	while (parts[i])
 		i++;
 	count = i;
+	if (count == 0)
+	{
+		free_split(parts);
+		handle_error();
+	}
 	if (!validate_integers(parts, count))
 	{
 		free_split(parts);

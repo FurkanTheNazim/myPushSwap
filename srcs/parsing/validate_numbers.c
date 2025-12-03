@@ -35,6 +35,10 @@ static long	ft_atol(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
+		if (sign == 1 && (res > (LONG_MAX - (*str - '0')) / 10))
+			return (LONG_MAX);
+		if (sign == -1 && (res > (LONG_MAX - (*str - '0')) / 10))
+			return (LONG_MIN);
 		res = res * 10 + (*str - '0');
 		str++;
 	}
