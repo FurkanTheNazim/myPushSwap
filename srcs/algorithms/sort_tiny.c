@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:25:27 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/12/03 19:25:37 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/12/12 01:12:44 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ void	sort_tiny(t_context *ctx)
 {
 	if (!ctx || !ctx->tower_a)
 		return ;
-	if (ctx->total_count == 2)
+	if (ctx->tower_a->size == 2)
 	{
 		if (ctx->tower_a->top->index > ctx->tower_a->top->next->index)
 			execute_swap_a(ctx);
 	}
-	else if (ctx->total_count == 3)
+	else if (ctx->tower_a->size == 3)
 		sort_three(ctx);
 }

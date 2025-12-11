@@ -6,7 +6,7 @@
 /*   By: mahmmous <mahmmous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 19:23:40 by mahmmous          #+#    #+#             */
-/*   Updated: 2025/12/03 19:23:41 by mahmmous         ###   ########.fr       */
+/*   Updated: 2025/12/12 01:18:02 by mahmmous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_context	*initialize_context(int *values, int count)
 	normalize_values(values, count, ctx);
 	ctx->tower_a = create_tower('a');
 	ctx->tower_b = create_tower('b');
-	populate_tower(ctx, values, sorted_values, count);
+	populate_tower(ctx, sorted_values, values, count);
 	free(sorted_values);
 	return (ctx);
 }
